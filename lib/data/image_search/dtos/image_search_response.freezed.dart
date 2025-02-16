@@ -21,7 +21,7 @@ ImageSearchResponse _$ImageSearchResponseFromJson(Map<String, dynamic> json) {
 /// @nodoc
 mixin _$ImageSearchResponse {
   /// 犬種情報
-  List<BreedDetail> get breeds => throw _privateConstructorUsedError;
+  List<BreedDetail>? get breeds => throw _privateConstructorUsedError;
 
   /// 画像のID
   String get id => throw _privateConstructorUsedError;
@@ -52,7 +52,7 @@ abstract class $ImageSearchResponseCopyWith<$Res> {
       _$ImageSearchResponseCopyWithImpl<$Res, ImageSearchResponse>;
   @useResult
   $Res call(
-      {List<BreedDetail> breeds,
+      {List<BreedDetail>? breeds,
       String id,
       String url,
       int? width,
@@ -74,17 +74,17 @@ class _$ImageSearchResponseCopyWithImpl<$Res, $Val extends ImageSearchResponse>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? breeds = null,
+    Object? breeds = freezed,
     Object? id = null,
     Object? url = null,
     Object? width = freezed,
     Object? height = freezed,
   }) {
     return _then(_value.copyWith(
-      breeds: null == breeds
+      breeds: freezed == breeds
           ? _value.breeds
           : breeds // ignore: cast_nullable_to_non_nullable
-              as List<BreedDetail>,
+              as List<BreedDetail>?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -114,7 +114,7 @@ abstract class _$$ImageSearchResponseImplCopyWith<$Res>
   @override
   @useResult
   $Res call(
-      {List<BreedDetail> breeds,
+      {List<BreedDetail>? breeds,
       String id,
       String url,
       int? width,
@@ -134,17 +134,17 @@ class __$$ImageSearchResponseImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? breeds = null,
+    Object? breeds = freezed,
     Object? id = null,
     Object? url = null,
     Object? width = freezed,
     Object? height = freezed,
   }) {
     return _then(_$ImageSearchResponseImpl(
-      breeds: null == breeds
+      breeds: freezed == breeds
           ? _value._breeds
           : breeds // ignore: cast_nullable_to_non_nullable
-              as List<BreedDetail>,
+              as List<BreedDetail>?,
       id: null == id
           ? _value.id
           : id // ignore: cast_nullable_to_non_nullable
@@ -169,7 +169,7 @@ class __$$ImageSearchResponseImplCopyWithImpl<$Res>
 @JsonSerializable()
 class _$ImageSearchResponseImpl implements _ImageSearchResponse {
   const _$ImageSearchResponseImpl(
-      {required final List<BreedDetail> breeds,
+      {required final List<BreedDetail>? breeds,
       required this.id,
       required this.url,
       required this.width,
@@ -180,14 +180,16 @@ class _$ImageSearchResponseImpl implements _ImageSearchResponse {
       _$$ImageSearchResponseImplFromJson(json);
 
   /// 犬種情報
-  final List<BreedDetail> _breeds;
+  final List<BreedDetail>? _breeds;
 
   /// 犬種情報
   @override
-  List<BreedDetail> get breeds {
+  List<BreedDetail>? get breeds {
+    final value = _breeds;
+    if (value == null) return null;
     if (_breeds is EqualUnmodifiableListView) return _breeds;
     // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_breeds);
+    return EqualUnmodifiableListView(value);
   }
 
   /// 画像のID
@@ -247,7 +249,7 @@ class _$ImageSearchResponseImpl implements _ImageSearchResponse {
 
 abstract class _ImageSearchResponse implements ImageSearchResponse {
   const factory _ImageSearchResponse(
-      {required final List<BreedDetail> breeds,
+      {required final List<BreedDetail>? breeds,
       required final String id,
       required final String url,
       required final int? width,
@@ -258,7 +260,7 @@ abstract class _ImageSearchResponse implements ImageSearchResponse {
 
   /// 犬種情報
   @override
-  List<BreedDetail> get breeds;
+  List<BreedDetail>? get breeds;
 
   /// 画像のID
   @override
@@ -303,16 +305,16 @@ mixin _$BreedDetail {
   String? get bredFor => throw _privateConstructorUsedError;
 
   /// 品種グループ
-  String get breedGroup => throw _privateConstructorUsedError;
+  String? get breedGroup => throw _privateConstructorUsedError;
 
   /// 寿命
   String get lifeSpan => throw _privateConstructorUsedError;
 
   /// 性格・気質
-  String get temperament => throw _privateConstructorUsedError;
+  String? get temperament => throw _privateConstructorUsedError;
 
   /// imageID
-  String get referenceImageId => throw _privateConstructorUsedError;
+  String? get referenceImageId => throw _privateConstructorUsedError;
 
   /// Serializes this BreedDetail to a JSON map.
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -335,10 +337,10 @@ abstract class $BreedDetailCopyWith<$Res> {
       int id,
       String name,
       String? bredFor,
-      String breedGroup,
+      String? breedGroup,
       String lifeSpan,
-      String temperament,
-      String referenceImageId});
+      String? temperament,
+      String? referenceImageId});
 
   $WeightDetailCopyWith<$Res> get weight;
 }
@@ -362,10 +364,10 @@ class _$BreedDetailCopyWithImpl<$Res, $Val extends BreedDetail>
     Object? id = null,
     Object? name = null,
     Object? bredFor = freezed,
-    Object? breedGroup = null,
+    Object? breedGroup = freezed,
     Object? lifeSpan = null,
-    Object? temperament = null,
-    Object? referenceImageId = null,
+    Object? temperament = freezed,
+    Object? referenceImageId = freezed,
   }) {
     return _then(_value.copyWith(
       weight: null == weight
@@ -384,22 +386,22 @@ class _$BreedDetailCopyWithImpl<$Res, $Val extends BreedDetail>
           ? _value.bredFor
           : bredFor // ignore: cast_nullable_to_non_nullable
               as String?,
-      breedGroup: null == breedGroup
+      breedGroup: freezed == breedGroup
           ? _value.breedGroup
           : breedGroup // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lifeSpan: null == lifeSpan
           ? _value.lifeSpan
           : lifeSpan // ignore: cast_nullable_to_non_nullable
               as String,
-      temperament: null == temperament
+      temperament: freezed == temperament
           ? _value.temperament
           : temperament // ignore: cast_nullable_to_non_nullable
-              as String,
-      referenceImageId: null == referenceImageId
+              as String?,
+      referenceImageId: freezed == referenceImageId
           ? _value.referenceImageId
           : referenceImageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ) as $Val);
   }
 
@@ -427,10 +429,10 @@ abstract class _$$BreedDetailImplCopyWith<$Res>
       int id,
       String name,
       String? bredFor,
-      String breedGroup,
+      String? breedGroup,
       String lifeSpan,
-      String temperament,
-      String referenceImageId});
+      String? temperament,
+      String? referenceImageId});
 
   @override
   $WeightDetailCopyWith<$Res> get weight;
@@ -453,10 +455,10 @@ class __$$BreedDetailImplCopyWithImpl<$Res>
     Object? id = null,
     Object? name = null,
     Object? bredFor = freezed,
-    Object? breedGroup = null,
+    Object? breedGroup = freezed,
     Object? lifeSpan = null,
-    Object? temperament = null,
-    Object? referenceImageId = null,
+    Object? temperament = freezed,
+    Object? referenceImageId = freezed,
   }) {
     return _then(_$BreedDetailImpl(
       weight: null == weight
@@ -475,22 +477,22 @@ class __$$BreedDetailImplCopyWithImpl<$Res>
           ? _value.bredFor
           : bredFor // ignore: cast_nullable_to_non_nullable
               as String?,
-      breedGroup: null == breedGroup
+      breedGroup: freezed == breedGroup
           ? _value.breedGroup
           : breedGroup // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       lifeSpan: null == lifeSpan
           ? _value.lifeSpan
           : lifeSpan // ignore: cast_nullable_to_non_nullable
               as String,
-      temperament: null == temperament
+      temperament: freezed == temperament
           ? _value.temperament
           : temperament // ignore: cast_nullable_to_non_nullable
-              as String,
-      referenceImageId: null == referenceImageId
+              as String?,
+      referenceImageId: freezed == referenceImageId
           ? _value.referenceImageId
           : referenceImageId // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
     ));
   }
 }
@@ -529,7 +531,7 @@ class _$BreedDetailImpl implements _BreedDetail {
 
   /// 品種グループ
   @override
-  final String breedGroup;
+  final String? breedGroup;
 
   /// 寿命
   @override
@@ -537,11 +539,11 @@ class _$BreedDetailImpl implements _BreedDetail {
 
   /// 性格・気質
   @override
-  final String temperament;
+  final String? temperament;
 
   /// imageID
   @override
-  final String referenceImageId;
+  final String? referenceImageId;
 
   @override
   String toString() {
@@ -594,10 +596,10 @@ abstract class _BreedDetail implements BreedDetail {
       required final int id,
       required final String name,
       required final String? bredFor,
-      required final String breedGroup,
+      required final String? breedGroup,
       required final String lifeSpan,
-      required final String temperament,
-      required final String referenceImageId}) = _$BreedDetailImpl;
+      required final String? temperament,
+      required final String? referenceImageId}) = _$BreedDetailImpl;
 
   factory _BreedDetail.fromJson(Map<String, dynamic> json) =
       _$BreedDetailImpl.fromJson;
@@ -620,7 +622,7 @@ abstract class _BreedDetail implements BreedDetail {
 
   /// 品種グループ
   @override
-  String get breedGroup;
+  String? get breedGroup;
 
   /// 寿命
   @override
@@ -628,11 +630,11 @@ abstract class _BreedDetail implements BreedDetail {
 
   /// 性格・気質
   @override
-  String get temperament;
+  String? get temperament;
 
   /// imageID
   @override
-  String get referenceImageId;
+  String? get referenceImageId;
 
   /// Create a copy of BreedDetail
   /// with the given fields replaced by the non-null parameter values.

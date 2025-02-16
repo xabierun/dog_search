@@ -28,7 +28,7 @@ class RandomSearch with _$RandomSearch {
   /// [ImageSearchResponse]を[RandomSearch]に変換
   factory RandomSearch.fromDto(ImageSearchResponse dto) => RandomSearch(
         imageUrl: dto.url,
-        breeds: dto.breeds.map(Breed.fromDto).toList(),
+        breeds: dto.breeds?.map(Breed.fromDto).toList() ?? [],
       );
 }
 
@@ -61,9 +61,9 @@ class Breed with _$Breed {
         name: dto.name,
         weight: Weight.fromDto(dto.weight),
         bredFor: dto.bredFor,
-        breedGroup: dto.breedGroup,
+        breedGroup: dto.breedGroup ?? '',
         lifeSpan: dto.lifeSpan,
-        temperament: dto.temperament,
+        temperament: dto.temperament ?? '',
       );
 }
 

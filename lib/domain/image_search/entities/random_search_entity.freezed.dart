@@ -149,7 +149,7 @@ class _$RandomSearchEntityImpl implements _RandomSearchEntity {
       {required this.page,
       this.format = Format.json,
       this.order = Order.random,
-      this.limit = 25});
+      this.limit = 5});
 
   factory _$RandomSearchEntityImpl.fromJson(Map<String, dynamic> json) =>
       _$$RandomSearchEntityImplFromJson(json);

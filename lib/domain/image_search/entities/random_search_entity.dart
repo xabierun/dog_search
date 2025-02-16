@@ -20,7 +20,7 @@ class RandomSearchEntity with _$RandomSearchEntity {
     @Default(Order.random) Order? order,
 
     ///一度に取得できる上限、max25件
-    @Default(25) int? limit,
+    @Default(5) int? limit,
   }) = _RandomSearchEntity;
 
   /// [RandomSearchEntity]をJsonから[Map]に変換するためのfactoryメソッド

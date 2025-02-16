@@ -16,7 +16,7 @@ class ImageSearchQuery with _$ImageSearchQuery {
     @Default(null) Format? format,
 
     /// 品種が存在するかどうか指定
-    @Default(null) bool? hasBreeds,
+    @Default(true) bool? hasBreeds,
 
     /// 画像の形式指定
     @Default(null) MimeType? mimeType,
@@ -28,7 +28,7 @@ class ImageSearchQuery with _$ImageSearchQuery {
     @Default(0) int? page,
 
     ///一度に取得できる上限、max25件
-    @Default(25) int? limit,
+    @Default(1) int? limit,
 
     ///画像のサイズ指定
     @Default(null) ImageSize? size,

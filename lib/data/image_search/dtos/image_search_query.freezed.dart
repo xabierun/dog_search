@@ -200,11 +200,11 @@ class __$$ImageSearchQueryImplCopyWithImpl<$Res>
 class _$ImageSearchQueryImpl implements _ImageSearchQuery {
   const _$ImageSearchQueryImpl(
       {this.format = null,
-      this.hasBreeds = null,
+      this.hasBreeds = true,
       this.mimeType = null,
       this.order = null,
       this.page = 0,
-      this.limit = 25,
+      this.limit = 1,
       this.size = null});
 
   factory _$ImageSearchQueryImpl.fromJson(Map<String, dynamic> json) =>

@@ -9,7 +9,7 @@ class ImageSearchResponse with _$ImageSearchResponse {
   /// factory constructor
   const factory ImageSearchResponse({
     /// 犬種情報
-    required List<BreedDetail> breeds,
+    required List<BreedDetail>? breeds,
 
     /// 画像のID
     required String id,
@@ -47,16 +47,16 @@ class BreedDetail with _$BreedDetail {
     required String? bredFor,
 
     /// 品種グループ
-    required String breedGroup,
+    required String? breedGroup,
 
     /// 寿命
     required String lifeSpan,
 
     /// 性格・気質
-    required String temperament,
+    required String? temperament,
 
     /// imageID
-    required String referenceImageId,
+    required String? referenceImageId,
   }) = _BreedDetail;
 
   /// [BreedDetail]をJsonから[Map]に変換するためのfactoryメソッド

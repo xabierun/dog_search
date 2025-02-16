@@ -1,3 +1,4 @@
+import 'package:dog_search/domain/image_search/models/random_search_model.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'shuffle_state.freezed.dart';
@@ -6,7 +7,7 @@ part 'shuffle_state.freezed.dart';
 class ShuffleState with _$ShuffleState {
   /// constructor
   const factory ShuffleState({
-    /// トークンコード
-    @Default('') String tokenCd,
+    @Default([]) List<RandomSearch> random,
+    @Default(false) bool isLoading,
   }) = _ShuffleState;
 }

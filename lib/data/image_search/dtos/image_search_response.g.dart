@@ -15,8 +15,8 @@ _$ImageSearchResponseImpl _$$ImageSearchResponseImplFromJson(
         final val = _$ImageSearchResponseImpl(
           breeds: $checkedConvert(
               'breeds',
-              (v) => (v as List<dynamic>)
-                  .map((e) => BreedDetail.fromJson(e as Map<String, dynamic>))
+              (v) => (v as List<dynamic>?)
+                  ?.map((e) => BreedDetail.fromJson(e as Map<String, dynamic>))
                   .toList()),
           id: $checkedConvert('id', (v) => v as String),
           url: $checkedConvert('url', (v) => v as String),
@@ -30,7 +30,8 @@ _$ImageSearchResponseImpl _$$ImageSearchResponseImplFromJson(
 Map<String, dynamic> _$$ImageSearchResponseImplToJson(
         _$ImageSearchResponseImpl instance) =>
     <String, dynamic>{
-      'breeds': instance.breeds.map((e) => e.toJson()).toList(),
+      if (instance.breeds?.map((e) => e.toJson()).toList() case final value?)
+        'breeds': value,
       'id': instance.id,
       'url': instance.url,
       if (instance.width case final value?) 'width': value,
@@ -48,11 +49,11 @@ _$BreedDetailImpl _$$BreedDetailImplFromJson(Map<String, dynamic> json) =>
           id: $checkedConvert('id', (v) => (v as num).toInt()),
           name: $checkedConvert('name', (v) => v as String),
           bredFor: $checkedConvert('bred_for', (v) => v as String?),
-          breedGroup: $checkedConvert('breed_group', (v) => v as String),
+          breedGroup: $checkedConvert('breed_group', (v) => v as String?),
           lifeSpan: $checkedConvert('life_span', (v) => v as String),
-          temperament: $checkedConvert('temperament', (v) => v as String),
+          temperament: $checkedConvert('temperament', (v) => v as String?),
           referenceImageId:
-              $checkedConvert('reference_image_id', (v) => v as String),
+              $checkedConvert('reference_image_id', (v) => v as String?),
         );
         return val;
       },
@@ -70,10 +71,11 @@ Map<String, dynamic> _$$BreedDetailImplToJson(_$BreedDetailImpl instance) =>
       'id': instance.id,
       'name': instance.name,
       if (instance.bredFor case final value?) 'bred_for': value,
-      'breed_group': instance.breedGroup,
+      if (instance.breedGroup case final value?) 'breed_group': value,
       'life_span': instance.lifeSpan,
-      'temperament': instance.temperament,
-      'reference_image_id': instance.referenceImageId,
+      if (instance.temperament case final value?) 'temperament': value,
+      if (instance.referenceImageId case final value?)
+        'reference_image_id': value,
     };
 
 _$WeightDetailImpl _$$WeightDetailImplFromJson(Map<String, dynamic> json) =>

@@ -15,13 +15,13 @@ _$ImageSearchQueryImpl _$$ImageSearchQueryImplFromJson(
         final val = _$ImageSearchQueryImpl(
           format: $checkedConvert(
               'format', (v) => $enumDecodeNullable(_$FormatEnumMap, v) ?? null),
-          hasBreeds: $checkedConvert('has_breeds', (v) => v as bool? ?? null),
+          hasBreeds: $checkedConvert('has_breeds', (v) => v as bool? ?? true),
           mimeType: $checkedConvert('mime_type',
               (v) => $enumDecodeNullable(_$MimeTypeEnumMap, v) ?? null),
           order: $checkedConvert(
               'order', (v) => $enumDecodeNullable(_$OrderEnumMap, v) ?? null),
           page: $checkedConvert('page', (v) => (v as num?)?.toInt() ?? 0),
-          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 1),
           size: $checkedConvert('size',
               (v) => $enumDecodeNullable(_$ImageSizeEnumMap, v) ?? null),
         );

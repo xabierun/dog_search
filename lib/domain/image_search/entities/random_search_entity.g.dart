@@ -18,7 +18,7 @@ _$RandomSearchEntityImpl _$$RandomSearchEntityImplFromJson(
               (v) => $enumDecodeNullable(_$FormatEnumMap, v) ?? Format.json),
           order: $checkedConvert('order',
               (v) => $enumDecodeNullable(_$OrderEnumMap, v) ?? Order.random),
-          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 25),
+          limit: $checkedConvert('limit', (v) => (v as num?)?.toInt() ?? 5),
         );
         return val;
       },

@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ShuffleState {
-  /// トークンコード
-  String get tokenCd => throw _privateConstructorUsedError;
+  List<RandomSearch> get random => throw _privateConstructorUsedError;
+  bool get isLoading => throw _privateConstructorUsedError;
 
   /// Create a copy of ShuffleState
   /// with the given fields replaced by the non-null parameter values.
@@ -32,7 +32,7 @@ abstract class $ShuffleStateCopyWith<$Res> {
           ShuffleState value, $Res Function(ShuffleState) then) =
       _$ShuffleStateCopyWithImpl<$Res, ShuffleState>;
   @useResult
-  $Res call({String tokenCd});
+  $Res call({List<RandomSearch> random, bool isLoading});
 }
 
 /// @nodoc
@@ -50,13 +50,18 @@ class _$ShuffleStateCopyWithImpl<$Res, $Val extends ShuffleState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tokenCd = null,
+    Object? random = null,
+    Object? isLoading = null,
   }) {
     return _then(_value.copyWith(
-      tokenCd: null == tokenCd
-          ? _value.tokenCd
-          : tokenCd // ignore: cast_nullable_to_non_nullable
-              as String,
+      random: null == random
+          ? _value.random
+          : random // ignore: cast_nullable_to_non_nullable
+              as List<RandomSearch>,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ) as $Val);
   }
 }
@@ -69,7 +74,7 @@ abstract class _$$ShuffleStateImplCopyWith<$Res>
       __$$ShuffleStateImplCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String tokenCd});
+  $Res call({List<RandomSearch> random, bool isLoading});
 }
 
 /// @nodoc
@@ -85,13 +90,18 @@ class __$$ShuffleStateImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? tokenCd = null,
+    Object? random = null,
+    Object? isLoading = null,
   }) {
     return _then(_$ShuffleStateImpl(
-      tokenCd: null == tokenCd
-          ? _value.tokenCd
-          : tokenCd // ignore: cast_nullable_to_non_nullable
-              as String,
+      random: null == random
+          ? _value._random
+          : random // ignore: cast_nullable_to_non_nullable
+              as List<RandomSearch>,
+      isLoading: null == isLoading
+          ? _value.isLoading
+          : isLoading // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -99,16 +109,26 @@ class __$$ShuffleStateImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$ShuffleStateImpl implements _ShuffleState {
-  const _$ShuffleStateImpl({this.tokenCd = ''});
+  const _$ShuffleStateImpl(
+      {final List<RandomSearch> random = const [], this.isLoading = false})
+      : _random = random;
 
-  /// トークンコード
+  final List<RandomSearch> _random;
   @override
   @JsonKey()
-  final String tokenCd;
+  List<RandomSearch> get random {
+    if (_random is EqualUnmodifiableListView) return _random;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(_random);
+  }
+
+  @override
+  @JsonKey()
+  final bool isLoading;
 
   @override
   String toString() {
-    return 'ShuffleState(tokenCd: $tokenCd)';
+    return 'ShuffleState(random: $random, isLoading: $isLoading)';
   }
 
   @override
@@ -116,11 +136,14 @@ class _$ShuffleStateImpl implements _ShuffleState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$ShuffleStateImpl &&
-            (identical(other.tokenCd, tokenCd) || other.tokenCd == tokenCd));
+            const DeepCollectionEquality().equals(other._random, _random) &&
+            (identical(other.isLoading, isLoading) ||
+                other.isLoading == isLoading));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, tokenCd);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_random), isLoading);
 
   /// Create a copy of ShuffleState
   /// with the given fields replaced by the non-null parameter values.
@@ -132,11 +155,14 @@ class _$ShuffleStateImpl implements _ShuffleState {
 }
 
 abstract class _ShuffleState implements ShuffleState {
-  const factory _ShuffleState({final String tokenCd}) = _$ShuffleStateImpl;
+  const factory _ShuffleState(
+      {final List<RandomSearch> random,
+      final bool isLoading}) = _$ShuffleStateImpl;
 
-  /// トークンコード
   @override
-  String get tokenCd;
+  List<RandomSearch> get random;
+  @override
+  bool get isLoading;
 
   /// Create a copy of ShuffleState
   /// with the given fields replaced by the non-null parameter values.

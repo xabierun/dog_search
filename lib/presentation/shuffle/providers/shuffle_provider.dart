@@ -6,31 +6,42 @@ import 'package:riverpod_annotation/riverpod_annotation.dart';
 part 'shuffle_provider.g.dart';
 
 /// ランダム検索画面のprovider
-@Riverpod(keepAlive: true)
-class Shuffle extends _$Shuffle {
+@riverpod
+class ShuffleStateNotifier extends _$ShuffleStateNotifier {
   /// ランダム検索用のbuilder
   @override
   ShuffleState build() {
     return const ShuffleState();
   }
-}
 
-///
-@riverpod
-class ShuffleSearchNotifier extends _$ShuffleSearchNotifier {
-  @override
-  Future<void> build() async {
-    final moge = await ref.read(imageSearchUsecaseProvider).randomSearch(1);
+  Future<void> randomSearch(int page) async {
+    final randomSearchResponse =
+        await ref.read(imageSearchUsecaseProvider).randomSearch(page);
 
-    moge.fold((exc) {
-      throw Exception(exc);
+    randomSearchResponse.fold((exception) {
+      throw Exception(exception);
     }, (success) {
-      _state.addAll(success.randomSearch);
+      state =
+          state.copyWith(random: [...state.random, ...success.randomSearch]);
     });
   }
 
-  /// api
-  List<RandomSearch> get random => _state;
+  void hogehoge({required bool isLoading}) {
+    state = state.copyWith(isLoading: isLoading);
+  }
+}
 
-  late final List<RandomSearch> _state;
+@riverpod
+class RandomSearch extends _$RandomSearch {
+  @override
+  Future<RandomSearchModel> build() async {
+    final randomSearchResponse =
+        await ref.read(imageSearchUsecaseProvider).randomSearch(1);
+
+    return randomSearchResponse.fold((exception) {
+      throw Exception(exception);
+    }, (success) {
+      return success;
+    });
+  }
 }
