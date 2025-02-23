@@ -19,6 +19,6 @@
   "explorer.fileNesting.patterns": {
     "*.dart": "$(capture).freezed.dart, $(capture).g.dart"
   },
-  "dart.flutterSdkPath": "~/.asdf/installs/flutter/3.27.1-stable",
+  "dart.flutterSdkPath": "~/.asdf/installs/flutter/3.29.0-stable",
   "java.configuration.updateBuildConfiguration": "interactive"
 }

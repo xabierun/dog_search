@@ -45,12 +45,18 @@ class $AssetsSvgGen {
   String get shuffle => 'assets/svg/shuffle.svg';
 
   /// List of all assets
-  List<String> get values =>
-      [activeFavorite, activeSearch, activeShuffle, favorite, search, shuffle];
+  List<String> get values => [
+    activeFavorite,
+    activeSearch,
+    activeShuffle,
+    favorite,
+    search,
+    shuffle,
+  ];
 }
 
 class Assets {
-  Assets._();
+  const Assets._();
 
   static const $AssetsEnvGen env = $AssetsEnvGen();
   static const $AssetsSvgGen svg = $AssetsSvgGen();

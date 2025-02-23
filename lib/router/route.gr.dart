@@ -1,3 +1,4 @@
+// dart format width=80
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
 // **************************************************************************
@@ -21,10 +22,7 @@ import 'package:dog_search/presentation/shuffle/shuffle_page.dart' as _i5;
 /// [_i1.ApiKeyInputPage]
 class ApiKeyInputRoute extends _i6.PageRouteInfo<void> {
   const ApiKeyInputRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          ApiKeyInputRoute.name,
-          initialChildren: children,
-        );
+    : super(ApiKeyInputRoute.name, initialChildren: children);
 
   static const String name = 'ApiKeyInputRoute';
 
@@ -40,10 +38,7 @@ class ApiKeyInputRoute extends _i6.PageRouteInfo<void> {
 /// [_i2.BottomNavigationPage]
 class BottomNavigationRoute extends _i6.PageRouteInfo<void> {
   const BottomNavigationRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          BottomNavigationRoute.name,
-          initialChildren: children,
-        );
+    : super(BottomNavigationRoute.name, initialChildren: children);
 
   static const String name = 'BottomNavigationRoute';
 
@@ -59,10 +54,7 @@ class BottomNavigationRoute extends _i6.PageRouteInfo<void> {
 /// [_i3.FavoritePage]
 class FavoriteRoute extends _i6.PageRouteInfo<void> {
   const FavoriteRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          FavoriteRoute.name,
-          initialChildren: children,
-        );
+    : super(FavoriteRoute.name, initialChildren: children);
 
   static const String name = 'FavoriteRoute';
 
@@ -78,10 +70,7 @@ class FavoriteRoute extends _i6.PageRouteInfo<void> {
 /// [_i4.SearchPage]
 class SearchRoute extends _i6.PageRouteInfo<void> {
   const SearchRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          SearchRoute.name,
-          initialChildren: children,
-        );
+    : super(SearchRoute.name, initialChildren: children);
 
   static const String name = 'SearchRoute';
 
@@ -97,10 +86,7 @@ class SearchRoute extends _i6.PageRouteInfo<void> {
 /// [_i5.ShufflePage]
 class ShuffleRoute extends _i6.PageRouteInfo<void> {
   const ShuffleRoute({List<_i6.PageRouteInfo>? children})
-      : super(
-          ShuffleRoute.name,
-          initialChildren: children,
-        );
+    : super(ShuffleRoute.name, initialChildren: children);
 
   static const String name = 'ShuffleRoute';
 

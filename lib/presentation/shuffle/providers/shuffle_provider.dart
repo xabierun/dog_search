@@ -1,5 +1,4 @@
 import 'package:dog_search/application/image_search/image_search_usecase.dart';
-import 'package:dog_search/domain/image_search/models/random_search_model.dart';
 import 'package:dog_search/presentation/shuffle/providers/shuffle_state.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -14,6 +13,7 @@ class ShuffleStateNotifier extends _$ShuffleStateNotifier {
     return const ShuffleState();
   }
 
+  /// ランダム検索
   Future<void> randomSearch(int page) async {
     final randomSearchResponse =
         await ref.read(imageSearchUsecaseProvider).randomSearch(page);
@@ -21,27 +21,18 @@ class ShuffleStateNotifier extends _$ShuffleStateNotifier {
     randomSearchResponse.fold((exception) {
       throw Exception(exception);
     }, (success) {
-      state =
-          state.copyWith(random: [...state.random, ...success.randomSearch]);
+      if (page == 1) {
+        state = state.copyWith(random: success.randomSearch);
+      } else {
+        state = state.copyWith(
+          random: [...state.random, ...success.randomSearch],
+        );
+      }
     });
   }
 
-  void hogehoge({required bool isLoading}) {
+  /// ローディング状態の更新
+  void updateIsLoading({required bool isLoading}) {
     state = state.copyWith(isLoading: isLoading);
-  }
-}
-
-@riverpod
-class RandomSearch extends _$RandomSearch {
-  @override
-  Future<RandomSearchModel> build() async {
-    final randomSearchResponse =
-        await ref.read(imageSearchUsecaseProvider).randomSearch(1);
-
-    return randomSearchResponse.fold((exception) {
-      throw Exception(exception);
-    }, (success) {
-      return success;
-    });
   }
 }
