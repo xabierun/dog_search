@@ -11,7 +11,7 @@ part 'image_search_datasource.g.dart';
 /// 犬の画像検索用API
 @riverpod
 ImageSearchDatasource imageSearchDatasource(Ref ref) =>
-    _ImageSearchDatasource(ApiClient(ref).client);
+    _ImageSearchDatasource(ApiClient().client);
 
 /// [ImageSearchDatasource]の抽象メソッド
 @RestApi()
