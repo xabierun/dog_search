@@ -16,7 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$ShuffleState {
+  /// ランダム表示用のリスト
   List<RandomSearch> get random => throw _privateConstructorUsedError;
+
+  /// ローディング中かどうか
   bool get isLoading => throw _privateConstructorUsedError;
 
   /// Create a copy of ShuffleState
@@ -113,7 +116,10 @@ class _$ShuffleStateImpl implements _ShuffleState {
       {final List<RandomSearch> random = const [], this.isLoading = false})
       : _random = random;
 
+  /// ランダム表示用のリスト
   final List<RandomSearch> _random;
+
+  /// ランダム表示用のリスト
   @override
   @JsonKey()
   List<RandomSearch> get random {
@@ -122,6 +128,7 @@ class _$ShuffleStateImpl implements _ShuffleState {
     return EqualUnmodifiableListView(_random);
   }
 
+  /// ローディング中かどうか
   @override
   @JsonKey()
   final bool isLoading;
@@ -159,8 +166,11 @@ abstract class _ShuffleState implements ShuffleState {
       {final List<RandomSearch> random,
       final bool isLoading}) = _$ShuffleStateImpl;
 
+  /// ランダム表示用のリスト
   @override
   List<RandomSearch> get random;
+
+  /// ローディング中かどうか
   @override
   bool get isLoading;
 

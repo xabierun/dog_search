@@ -83,7 +83,7 @@ class _ImageSearchDatasource implements ImageSearchDatasource {
 // **************************************************************************
 
 String _$imageSearchDatasourceHash() =>
-    r'74bbd6cd7b8d1a0d148ca5f6a14303a85ef4f757';
+    r'6fb73709e9745a9de3d841329caeae27b0d487a5';
 
 /// 犬の画像検索用API
 ///
